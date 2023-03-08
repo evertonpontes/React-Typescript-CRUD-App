@@ -6,7 +6,10 @@ export async function AddBook(req: Request, res: Response) {
 
         myDb.tbBook.create({
             label: req.body.label,
-            year: req.body.year
+            published: req.body.published,
+            author: req.body.author,
+            gender: req.body.gender,
+            imgURL: req.body.imgURL
         })
 
         return res.status(201).json('Successful registration!')
@@ -57,7 +60,10 @@ export async function UpdateOneBook(req: Request, res: Response) {
         myDb.tbBook.updateOne({ 
             id: Number(id),
             label: req.body.label,
-            year: req.body.year
+            published: req.body.published,
+            author: req.body.author,
+            gender: req.body.gender,
+            imgURL: req.body.imgURL
          })
 
         return res.status(201).json({ msg: 'Successful update!' })
