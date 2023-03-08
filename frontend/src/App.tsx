@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import api from './services/api';
+import Books from './components/Books';
 
 interface IBook {
   id?: number;
@@ -21,16 +22,7 @@ function App() {
 
   return (
     <div className="App">
-      {
-        books.map(book => {
-          return(
-            <div>
-              <strong>Label:</strong>
-              <p>{book.label}</p><hr/>
-            </div>
-          );
-        })
-      }
+      <Books books={books} />
     </div>
   );
 }
